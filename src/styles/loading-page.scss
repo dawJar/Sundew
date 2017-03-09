@@ -1,0 +1,60 @@
+@import "variables.scss";
+@import "animation.scss";
+
+
+div#loading-page {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: #cb4b41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+i.loading-circle {
+  box-sizing: border-box;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: transparent;
+  z-index: 11;
+  border-top: 3px solid $mainFontColor;
+  border-right: 3px solid $mainFontColor;
+  border-bottom: 3px solid $mainFontColor;
+  border-radius: 50%;
+}
+
+i.circle-one {
+  $animationName: 'loading-logo-one';
+  // &:hover {
+
+    @include loading-logo-anim($animationName);
+  // }
+}
+
+i.circle-two {
+  $animationName: 'loading-logo-two';
+  width: 60px;
+  height: 60px;
+  border-width: 2px;
+  transform: rotateZ(nth($loadingCircleTwo, 1));
+  // &:hover {
+
+    @include loading-logo-anim($animationName);
+  // }
+}
+
+i.circle-three {
+  $animationName: 'loading-logo-three';
+  width: 30px;
+  height: 30px;
+  // border-radius: 10px;
+  border-width: 2px;
+  transform: rotateZ(nth($loadingCircleThree, 1));
+  // &:hover {
+
+    @include loading-logo-anim($animationName);
+  // }
+}

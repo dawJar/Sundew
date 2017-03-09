@@ -1,1 +1,39 @@
 @import "variables.scss";
+
+
+@mixin loading-logo-anim($circleKeyframes) {
+  animation-name: $circleKeyframes;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2500ms;
+}
+
+@keyframes loading-logo-one {
+  $start: nth($loadingCircleOne, 1);
+  $stop: nth($loadingCircleOne, 2);
+  0% {
+    transform: rotateZ($start);
+  }
+  100% {
+    transform: rotateZ($stop);
+  }
+}
+@keyframes loading-logo-two {
+  $start: nth($loadingCircleTwo, 1);
+  $stop: nth($loadingCircleTwo, 2);
+  0% {
+    transform: rotateZ($start);
+  }
+  100% {
+    transform: rotateZ(-$stop);
+  }
+}
+@keyframes loading-logo-three {
+  $start: nth($loadingCircleThree, 1);
+  $stop: nth($loadingCircleThree, 2);
+  0% {
+    transform: rotateZ($start);
+  }
+  100% {
+    transform: rotateZ($stop);
+  }
+}

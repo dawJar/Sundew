@@ -6,14 +6,15 @@
   box-sizing: inherit;
 }
 
-html {
+html, body {
   box-sizing: border-box;
+  height: 100%;
 }
 
 * {
   margin: 0 auto;
   padding: 0;
-  color: $primaryColor;
+  color: $mainFontColor;
   text-align: center;
   font-family: Arial, sans-serif;
 }

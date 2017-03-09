@@ -1,8 +1,6 @@
 $primaryColor: #222;
-$bgColor: #eee;
-$navHeight: 50px;
-$navWidth: 100%;
-$navLinkWidth: 20%;
+$bgColor: #899c2c;
+$mainFontColor: #eee;
 
 $navBgColor: khaki;
 $navMainMenuBgColor: tomato;
@@ -10,4 +8,8 @@ $navMainMenuBgColorHover: skyblue;
 $navDropdownMenuBgColor: #5831b2;
 $navDropdownMenuBgColorHover: gold;
 $navFontSize: 18px;
-$navPaddingTop: $navHeight / 2 - $navFontSize / 2;
+
+// lading animation
+$loadingCircleOne: (0, 360deg);
+$loadingCircleTwo: (180deg, 580deg);
+$loadingCircleThree: (90deg, 930deg);
