@@ -99,7 +99,6 @@ gulp.task('clean', function() {
 // default
 gulp.task('default', [ 'clean', 'browserSync', 'styles', 'js', 'imagemin', 'views'],
     function () {
-
     gulp.watch(src + 'styles/*', ['styles'])
     gulp.watch(src + 'js/*', ['js'])
     gulp.watch(src + 'images/*', ['imagemin']);
