@@ -30,7 +30,7 @@ i.circle-one {
   $animationName: 'loading-logo-one';
   // &:hover {
 
-    @include loading-logo-anim($animationName);
+  @include loading-logo-anim($animationName);
   // }
 }
 
@@ -42,7 +42,7 @@ i.circle-two {
   transform: rotateZ(nth($loadingCircleTwo, 1));
   // &:hover {
 
-    @include loading-logo-anim($animationName);
+  @include loading-logo-anim($animationName);
   // }
 }
 
@@ -55,6 +55,6 @@ i.circle-three {
   transform: rotateZ(nth($loadingCircleThree, 1));
   // &:hover {
 
-    @include loading-logo-anim($animationName);
+  @include loading-logo-anim($animationName);
   // }
 }

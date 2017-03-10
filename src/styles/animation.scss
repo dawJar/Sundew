@@ -1,6 +1,7 @@
 @import "variables.scss";
 
 
+// loading page
 @mixin loading-logo-anim($circleKeyframes) {
   animation-name: $circleKeyframes;
   animation-timing-function: ease-in-out;
@@ -35,5 +36,28 @@
   }
   100% {
     transform: rotateZ($stop);
+  }
+}
+
+// nav toggle btn
+@mixin slide-arrow-in-animation {
+  animation-name: slide-in;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(30px);
+  }
+  65% {
+    transform: translateX(220px);
+  }
+  80% {
+    transform: translateX(190px);
+  }
+  100% {
+    transform: translateX(200px);
   }
 }

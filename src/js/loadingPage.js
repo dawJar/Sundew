@@ -1,18 +1,18 @@
 $(document).ready(function () {
 
-  var loadingPage = (function () {
-    var loadingPage = $('#loading-page');
+  const loadingPage = (function () {
+    let loadingPage = $('#loading-page');
 
-    var removeLoadingContent = function () {
+    let removeLoadingContent = function () {
       loadingPage.remove();
     };
 
-    var hideLoadingContent = function () {
+    let hideLoadingContent = function () {
       loadingPage.delay(1500).fadeOut('slow', removeLoadingContent)
     };
 
     return {
-      hideLoadingContent: hideLoadingContent,
+      hideLoadingContent
     };
 
   })();

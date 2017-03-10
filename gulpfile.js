@@ -31,9 +31,9 @@ gulp.task('js', function () {
 // styles
 gulp.task('styles', function () {
 
+    var filterForCssDependencies = plugins.filter('**/*.css', { restore: true });
     var filterForLessDependencies = plugins.filter('**/*.less', { restore: true });
     var filterForSassDependencies = plugins.filter('**/*.scss', { restore: true });
-    var filterForCssDependencies = plugins.filter('**/*.css', { restore: true });
 
     var cssStream = gulp.src(plugins.mainBowerFiles().concat(src + 'styles/*.css'))
                .pipe(filterForCssDependencies)
@@ -48,22 +48,23 @@ gulp.task('styles', function () {
 
 
     var sassStream = gulp.src(plugins.mainBowerFiles().concat(src + 'styles/*.scss'))
+                                    // .concat(fontStream))
                .pipe(filterForSassDependencies)
                .pipe(plugins.plumber())
                .pipe(plugins.sass())
                .pipe(plugins.concat('sass.css'));
 
-    return merge(lessStream, sassStream, cssStream)
-               .pipe(plugins.autoprefixer({
-                 browsers: ['last 2 versions'],
-                 cascade: false
-                }))
-               .pipe(plugins.concat('styles.css'))
-               .pipe(plugins.rename({ suffix: '.min' }))
-               .pipe(plugins.minifyCss())
-               .pipe(gulp.dest(dest + 'css'))
-               .pipe(browserSync.reload({ stream: true }))
-               .pipe(plugins.notify({ message: 'Styles task complete' }));
+    return merge(cssStream, lessStream, sassStream)
+              .pipe(plugins.autoprefixer({
+                  browsers: ['last 2 versions'],
+                  cascade: false
+               }))
+              .pipe(plugins.concat('styles.css'))
+              .pipe(plugins.rename({ suffix: '.min' }))
+              .pipe(plugins.minifyCss())
+              .pipe(gulp.dest(dest + 'css'))
+              .pipe(browserSync.reload({ stream: true }))
+              .pipe(plugins.notify({ message: 'Styles task complete' }));
 
 });
 
