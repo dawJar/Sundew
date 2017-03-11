@@ -28,3 +28,22 @@ i.fa {
 i.fa-arrow-left {
   @include slide-drawer-in-animation($animToggleName);
 }
+
+ul.drawer-links {
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 92px;
+  list-style-type: none;
+
+  li {
+    cursor: pointer;
+    margin-bottom: 16px;
+    font-size: 28px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
