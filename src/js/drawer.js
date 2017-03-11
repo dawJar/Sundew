@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     let drawer = $('.drawer');
     let drawerLinks = $('.drawer-links');
+    let contactIcons = $('.contact-icons');
     let toggleBtn = $('i#toggle');
     let showDrawerStyle = 'show-drawer';
     let hamburgerStyle = 'fa-bars';
@@ -29,8 +30,10 @@ $(document).ready(function () {
     let drawerLinksSupport = () => {
       if (showDrawer) {
         setTimeout(() => drawerLinks.css('display', () => 'block'), 80);
+        setTimeout(() => contactIcons.css('display', () => 'block'), 240);
       } else {
         setTimeout(() => drawerLinks.css('display', () => 'none'), 600);
+        setTimeout(() => contactIcons.css('display', () => 'none'), 600);
       }
     };
 
