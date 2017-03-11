@@ -1,18 +1,18 @@
 $primaryColor: #222;
 $bgColor: #899c2c;
+$mainSupplementaryBgColor: #cb4b41;
+$loadingPageBgColor: #eee;
+$loaderBorderColor: $mainSupplementaryBgColor;
 $mainFontColor: #eee;
-
-$navBgColor: khaki;
-$navMainMenuBgColor: tomato;
-$navMainMenuBgColorHover: skyblue;
-$navDropdownMenuBgColor: #5831b2;
-$navDropdownMenuBgColorHover: gold;
-$navFontSize: 18px;
 
 // lading animation
 $loadingCircleOne: (0, 360deg);
 $loadingCircleTwo: (180deg, 580deg);
 $loadingCircleThree: (90deg, 930deg);
+
+// slide drawer animation
+$animDrawerName: 'slide-in';
+$animToggleName: 'slide-in-toggle';
 
 // mq breakpoints
 $smallDevice: 768px;
