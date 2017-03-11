@@ -3,6 +3,7 @@ $(document).ready(function () {
   const toggleButton = (function () {
 
     let drawer = $('.drawer');
+    let drawerLinks = $('.drawer-links');
     let toggleBtn = $('i#toggle');
     let showDrawerStyle = 'show-drawer';
     let hamburgerStyle = 'fa-bars';
@@ -16,10 +17,20 @@ $(document).ready(function () {
         showDrawer = true;
         switchToBackArrow();
         drawerSupport();
+        drawerLinksSupport();
       } else {
         showDrawer = false;
         drawerToggleHideAnimation();
         drawerSupport();
+        drawerLinksSupport();
+      }
+    };
+
+    let drawerLinksSupport = () => {
+      if (showDrawer) {
+        setTimeout(() => drawerLinks.css('display', () => 'block'), 80);
+      } else {
+        setTimeout(() => drawerLinks.css('display', () => 'none'), 600);
       }
     };
 
