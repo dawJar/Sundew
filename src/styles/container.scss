@@ -6,11 +6,11 @@
 div#container-responsive {
   display: flex;
   width: 100%;
-  // margin: 0 20%;
   padding-top: 22px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  // background-color: $bgColor;
   border: 5px solid $bgColor;
 
   @include mQ($xSmallDevice) {
@@ -19,32 +19,74 @@ div#container-responsive {
     width: 73%;
   };
   @include mQ($smallDevice) {
-    width: 83%;
+    width: 81%;
   };
   @include mQ($mediumDevice) {
-    width: 87%;
-  };
-  @include mQ($largeDevice) {
-    width: 89%;
+    width: 85%;
+    max-width: 1000px;
   };
 
   #container-content {
-    width: 100%;
     @include mQ($xSmallDevice) {
       margin-top: 34px;
       border: 5px solid $bgColor;
     };
+    width: 100%;
     border: 0;
-  }
-
-  div {
-    color: $bgColor !important;
-
   }
 
   h2 {
     color: $bgColor !important;
     font-size: 44px;
-    // border-top: 5px solid $bgColor;
+    text-decoration: underline;
+    margin: 24px 0;
   }
+
+  div.container-article {
+    display: flex;
+    flex-direction: column;
+    // flex:
+    width: 100%;
+  }
+
+  div.single-article {
+    cursor: pointer;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 12px 24px 12px;
+    padding: 12px 8px;
+    color: $bgColor;
+    // background-color: lighten($bgColor, 7);
+    border: 3px solid $bgColor;
+
+    &:hover {
+      background-color: lighten($bgColor, 3);
+      border: 2px solid $mainFontColor;
+      color: darken($mainFontColor, 7);
+      transition: background-color 400ms ease-in-out;
+      transition: color 200ms ease-in-out;
+    }
+
+    h3 {
+      // padding-left: 12px;
+      font-size: 32px;
+      text-align: left;
+      margin: 12px 0;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: justify;
+      margin-bottom: 12px;
+    }
+
+    p.read-more {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 8px;
+
+    }
+
+  }
+
 }
