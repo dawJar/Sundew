@@ -87,7 +87,7 @@ gulp.task('views', function () {
               .pipe(plugins.pug({ pretty: true }))
               .pipe(gulp.dest(dest))
               .pipe(browserSync.reload({ stream: true }))
-              .pipe(plugins.notify({ message: 'Views task complete' }));
+              // .pipe(plugins.notify({ message: 'Views task complete' }));
 });
 
 // clean

@@ -2,6 +2,12 @@
 @import "animation.scss";
 
 
+@mixin contactIconStyle($hoverColor) {
+  &:hover {
+    background-color: $hoverColor;
+  }
+}
+
 // media queries
 @mixin mQ($args...) {
     @if length($args) == 1 {

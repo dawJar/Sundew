@@ -5,6 +5,8 @@
 div#container-main {
   display: flex;
   height: 100%;
+  color: $mainFontColor;
+  background-color: $bgColor;
   justify-content: center;
   align-items: center;
   flex-direction: column;

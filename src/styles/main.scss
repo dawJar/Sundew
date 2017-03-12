@@ -14,11 +14,11 @@ html, body {
 * {
   margin: 0 auto;
   padding: 0;
-  color: $mainFontColor;
+  // color: $mainFontColor;
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
 body {
-  background-color: $bgColor;
+  background-color: $mainFontColor;
 }

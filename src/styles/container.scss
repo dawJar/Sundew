@@ -1,0 +1,50 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "animation.scss";
+
+
+div#container-responsive {
+  display: flex;
+  width: 100%;
+  // margin: 0 20%;
+  padding-top: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid $bgColor;
+
+  @include mQ($xSmallDevice) {
+    padding-top: 0;
+    border: 0;
+    width: 73%;
+  };
+  @include mQ($smallDevice) {
+    width: 83%;
+  };
+  @include mQ($mediumDevice) {
+    width: 87%;
+  };
+  @include mQ($largeDevice) {
+    width: 89%;
+  };
+
+  #container-content {
+    width: 100%;
+    @include mQ($xSmallDevice) {
+      margin-top: 34px;
+      border: 5px solid $bgColor;
+    };
+    border: 0;
+  }
+
+  div {
+    color: $bgColor !important;
+
+  }
+
+  h2 {
+    color: $bgColor !important;
+    font-size: 44px;
+    // border-top: 5px solid $bgColor;
+  }
+}
