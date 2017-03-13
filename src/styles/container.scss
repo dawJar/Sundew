@@ -36,72 +36,12 @@ div#container-responsive {
 
   h2 {
     color: $mainSupplementaryBgColor;
-    font-size: 44px;
+    font-size: 48px;
     text-decoration: overline;
     margin: 30px 0 24px 0;
 
     @include mQ($xSmallDevice) {
       margin: 0 0 24px 0;
     };
-  }
-
-  div.container-articles {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  div.single-article {
-    cursor: pointer;
-    box-sizing: border-box;
-    box-shadow: 0 8px 6px -6px darken($mainSupplementaryBgColor, 10);
-    margin: 0 8px 24px 8px;
-    padding: 6px 8px;
-    color: $mainFontColor;
-    background-color: $bgColor;
-    border-radius: 10px;
-    border: 3px solid $bgColor;
-
-    @include mQ($xSmallDevice) {
-      margin: 0 0 24px 0;
-      padding: 6px 16px;
-    };
-    @include mQ($smallDevice) {
-      padding: 6px 16px;
-    };
-    @include mQ($mediumDevice) {
-      padding: 6px 16px;
-    };
-
-    &:hover {
-      box-shadow: none;
-      // box-shadow: 0 4px 3px -3px darken($mainSupplementaryBgColor, 10);
-      background-color: darken($bgColor, 3);
-      color: darken($mainFontColor, 7);
-      transition: background-color 400ms ease-in-out;
-      transition: color 200ms ease-in-out;
-    }
-
-    h3 {
-      font-size: 32px;
-      text-align: left;
-      margin: 12px 0;
-    }
-
-    p {
-      font-size: 18px;
-      text-align: justify;
-      margin-bottom: 12px;
-    }
-
-    p.read-more {
-      font-size: 22px;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-  }
-
-  div.single-article.hidden-article {
-    display: none;
   }
 }
