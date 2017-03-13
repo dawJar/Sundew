@@ -4,17 +4,17 @@
 
 
 div#container-responsive {
-  display: flex;
+  height: 100%;
   width: 100%;
-  padding-top: 22px;
+  background-color: $bgColor;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // background-color: $bgColor;
-  border: 5px solid $bgColor;
+  border: 5px solid transparent;
 
   @include mQ($xSmallDevice) {
-    padding-top: 0;
+    background-color: $mainFontColor;
+    padding: 34px 0;
     border: 0;
     width: 73%;
   };
@@ -27,42 +27,59 @@ div#container-responsive {
   };
 
   #container-content {
-    @include mQ($xSmallDevice) {
-      margin-top: 34px;
-      border: 5px solid $bgColor;
-    };
+    background-color: $bgColor;
+    // box-shadow: 3px 3px 20px darken($mainSupplementaryBgColor, 5);
     width: 100%;
     border: 0;
+    @include mQ($xSmallDevice) {
+      border-radius: 10px;
+      // margin-top: 34px;
+      border: 5px solid $mainSupplementaryBgColor;
+    };
   }
 
   h2 {
-    color: $bgColor !important;
+    color: $mainFontColor;
     font-size: 44px;
-    text-decoration: underline;
+    // text-decoration: underline;
     margin: 24px 0;
   }
 
-  div.container-article {
+  div.container-articles {
     display: flex;
     flex-direction: column;
-    // flex:
     width: 100%;
   }
 
   div.single-article {
     cursor: pointer;
     box-sizing: border-box;
-    box-sizing: border-box;
+    box-shadow: 0 8px 6px -6px darken($mainSupplementaryBgColor, 10);
     margin: 0 12px 24px 12px;
     padding: 12px 8px;
-    color: $bgColor;
-    // background-color: lighten($bgColor, 7);
-    border: 3px solid $bgColor;
+    color: $mainSupplementaryBgColor;
+    background-color: $mainFontColor;
+    border-radius: 10px;
+    border: 3px solid $mainFontColor;
+
+    @include mQ($xSmallDevice) {
+      margin: 0 24px 24px 24px;
+      padding: 24px 16px;
+    };
+    @include mQ($smallDevice) {
+      margin: 0 44px 24px 44px;
+      padding: 24px 16px;
+    };
+    @include mQ($mediumDevice) {
+      margin: 0 56px 24px 56px;
+      padding: 24px 16px;
+    };
 
     &:hover {
-      background-color: lighten($bgColor, 3);
-      border: 2px solid $mainFontColor;
-      color: darken($mainFontColor, 7);
+      box-shadow: none;
+      box-shadow: 0 4px 3px -3px darken($mainSupplementaryBgColor, 10);
+      background-color: darken($mainFontColor, 3);
+      color: darken($mainSupplementaryBgColor, 7);
       transition: background-color 400ms ease-in-out;
       transition: color 200ms ease-in-out;
     }
@@ -86,7 +103,10 @@ div#container-responsive {
       margin-bottom: 8px;
 
     }
+  }
 
+  div.single-article.hidden-article {
+    display: none;
   }
 
 }

@@ -16,7 +16,7 @@ div.drawer {
 div.show-drawer {
   // color: $mainFontColor;
   display: block;
-  border-right: 2px solid darken($mainSupplementaryBgColor, 10);
+  border-right: 5px solid darken($mainSupplementaryBgColor, 5);
 }
 
 i.fa {
@@ -33,7 +33,10 @@ i.fa-arrow-left {
 }
 
 i.fa-bars.normal-toggle {
-  color: $bgColor;
+  color: $mainFontColor;
+  @include mQ($xSmallDevice) {
+    color: $mainSupplementaryBgColor;
+  };
 }
 
 ul.drawer-links {
