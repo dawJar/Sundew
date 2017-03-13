@@ -6,7 +6,6 @@
 div#container-responsive {
   height: 100%;
   width: 100%;
-  background-color: $bgColor;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -27,22 +26,23 @@ div#container-responsive {
   };
 
   #container-content {
-    background-color: $bgColor;
-    // box-shadow: 3px 3px 20px darken($mainSupplementaryBgColor, 5);
+    background-color: $mainFontColor;
     width: 100%;
     border: 0;
     @include mQ($xSmallDevice) {
       border-radius: 10px;
-      // margin-top: 34px;
-      border: 5px solid $mainSupplementaryBgColor;
     };
   }
 
   h2 {
-    color: $mainFontColor;
+    color: $mainSupplementaryBgColor;
     font-size: 44px;
-    // text-decoration: underline;
-    margin: 24px 0;
+    text-decoration: overline;
+    margin: 30px 0 24px 0;
+
+    @include mQ($xSmallDevice) {
+      margin: 0 0 24px 0;
+    };
   }
 
   div.container-articles {
@@ -55,37 +55,34 @@ div#container-responsive {
     cursor: pointer;
     box-sizing: border-box;
     box-shadow: 0 8px 6px -6px darken($mainSupplementaryBgColor, 10);
-    margin: 0 12px 24px 12px;
-    padding: 12px 8px;
-    color: $mainSupplementaryBgColor;
-    background-color: $mainFontColor;
+    margin: 0 8px 24px 8px;
+    padding: 6px 8px;
+    color: $mainFontColor;
+    background-color: $bgColor;
     border-radius: 10px;
-    border: 3px solid $mainFontColor;
+    border: 3px solid $bgColor;
 
     @include mQ($xSmallDevice) {
-      margin: 0 24px 24px 24px;
-      padding: 24px 16px;
+      margin: 0 0 24px 0;
+      padding: 6px 16px;
     };
     @include mQ($smallDevice) {
-      margin: 0 44px 24px 44px;
-      padding: 24px 16px;
+      padding: 6px 16px;
     };
     @include mQ($mediumDevice) {
-      margin: 0 56px 24px 56px;
-      padding: 24px 16px;
+      padding: 6px 16px;
     };
 
     &:hover {
       box-shadow: none;
-      box-shadow: 0 4px 3px -3px darken($mainSupplementaryBgColor, 10);
-      background-color: darken($mainFontColor, 3);
-      color: darken($mainSupplementaryBgColor, 7);
+      // box-shadow: 0 4px 3px -3px darken($mainSupplementaryBgColor, 10);
+      background-color: darken($bgColor, 3);
+      color: darken($mainFontColor, 7);
       transition: background-color 400ms ease-in-out;
       transition: color 200ms ease-in-out;
     }
 
     h3 {
-      // padding-left: 12px;
       font-size: 32px;
       text-align: left;
       margin: 12px 0;
@@ -101,12 +98,10 @@ div#container-responsive {
       font-size: 22px;
       text-align: center;
       margin-bottom: 8px;
-
     }
   }
 
   div.single-article.hidden-article {
     display: none;
   }
-
 }

@@ -33,9 +33,11 @@ i.fa-arrow-left {
 }
 
 i.fa-bars.normal-toggle {
-  color: $mainFontColor;
+  position: absolute;
+  color: $mainSupplementaryBgColor;
   @include mQ($xSmallDevice) {
-    color: $mainSupplementaryBgColor;
+    position: fixed;
+    // color: $mainSupplementaryBgColor;
   };
 }
 
