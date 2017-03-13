@@ -6,6 +6,7 @@ div.container-posts {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 80px;
 }
 
 div.single-post {
@@ -62,8 +63,8 @@ div.single-post.hidden-post {
   display: none;
 }
 
-span#peeper {
-  visibility: hidden;
+div#peeper {
+  // visibility: hidden;
   position: fixed;
   z-index: 99;
   background-color: red;

@@ -6,62 +6,54 @@ $(document).ready(function () {
         let body = $('body');
         let containerPosts = $('.container-posts');
         let singlePost = $('.single-post');
-        let watcher = $('#peeper');
-
-        let containerPostsHeight,
-            singlePostHeight,
-            postCounter,
-            gapBetweenPosts,
-            containerPostsTopPos,
-            watcherTopPos,
-            toggleTopPos;
 
         let windowHeight = windowObj.height();
+        let currentHighestPost = 0;
+        let singlePostHeight,
+            gapBetweenPosts,
+            containerPostsTopPos,
+            scrollTopPos,
+            visiblePosts;
 
 
-        let countPosts = () => {
+        let setPosts = () => {
             let allPosts = containerPosts.children();
-            let visiblePosts = allPosts.filter((i, el) => el.className === 'single-post');
-            let arrayOfPosts = visiblePosts.map(el => el);
-
-            return arrayOfPosts.length;
+            visiblePosts = allPosts.filter((i, el) => el.className === 'single-post');
         };
 
         let setDimensions = () => {
-            let visiblePostCounter = countPosts();
+            let visiblePostCounter = visiblePosts.length;
 
             containerPostsTopPos = containerPosts.offset().top;
-            watcherTopPos = watcher.offset().top;
+            scrollTopPos = windowObj.scrollTop();
 
-            containerPostsHeight = containerPosts.height();
+            let containerPostsHeight = containerPosts.height();
             singlePostHeight = singlePost.outerHeight();
-            gapBetweenPosts = (containerPostsHeight - singlePostHeight * visiblePostCounter) / visiblePostCounter;
-            
+            gapBetweenPosts = (containerPostsHeight - (singlePostHeight * visiblePostCounter)) / visiblePostCounter;
         };
 
-        let checkTogglePosition = () => {
-            if (watcherTopPos > containerPostsTopPos) {
-                console.log('more');
+        let checkWatcherPosition = () => {
+            let postWithBottomPadding = singlePostHeight + gapBetweenPosts;
+            let halfOfPostHeight = postWithBottomPadding / 2;
+            let basicHeight = containerPostsTopPos;
+            let highestPostBottomPos = (currentHighestPost === 0) ?
+                    basicHeight : basicHeight + (postWithBottomPadding * currentHighestPost);
+
+            if (scrollTopPos > highestPostBottomPos) {
                 showNextHiddenPost();
-            } else {
-                console.log('even');
             }
         };
 
         let showNextHiddenPost = () => {
-
+            let whichOneToShow = visiblePosts.length;
+            singlePost.eq(whichOneToShow).fadeIn('slow').removeClass('hidden-post');
+            currentHighestPost++;
         };
 
-        // let setWatcher = () => {
-        //     watcher.css('top', () => containerPostsTopPos);
-        //     watcherTopPos = containerPostsTopPos;
-        // };
-
         let scrollEventHandler = () => {
+            setPosts();
             setDimensions();
-            checkTogglePosition();
-            // console.log(watcher.offset());
-            // if (watcherTopPos === undefined) { setWatcher(); }
+            checkWatcherPosition();
         };
 
         return {
