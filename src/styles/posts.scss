@@ -61,3 +61,10 @@ div.single-post {
 div.single-post.hidden-post {
   display: none;
 }
+
+span#peeper {
+  visibility: hidden;
+  position: fixed;
+  z-index: 99;
+  background-color: red;
+}
