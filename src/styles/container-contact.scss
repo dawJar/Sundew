@@ -1,0 +1,92 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+
+div.container-contact {
+    input#name, input#email, input#msg {
+        width: 96%;
+        min-height: 50px;
+        font-size: 18px;
+        margin-bottom: 12px;
+        color: $mainFontColor;
+        background-color: lighten($bgColor, 10);
+        border: 2px solid $bgColor;
+        &:focus {
+            border: 2px solid darken($bgColor, 10);
+            background-color: darken($bgColor, 3);
+        }
+    }
+    input#msg {
+        min-height: 120px;
+    }
+
+    .form-align {
+        display: block;
+        width: 96%;
+        text-align: left;
+        margin-bottom: 6px;
+    }
+
+    label {
+        font-size: 18px;
+        font-weight: bolder;
+        color: $mainSupplementaryBgColor;
+    }
+
+    input#submit, input#clear {
+        cursor: pointer;
+        min-height: 50px;
+        min-width: 180px;
+        background-color: $mainSupplementaryBgColor;
+        border: none;
+        font-size: 18px;
+        color: $mainFontColor;
+
+        @include mQ($mediumDevice) { min-width: 200px; };
+        @include mQ($largeDevice) { min-width: 230px; };
+
+        &:hover {
+            background-color: darken($mainSupplementaryBgColor, 7);
+            color: lighten($mainFontColor, 10);
+        }
+    }
+    input#clear {
+        min-width: 100px;
+        @include mQ($mediumDevice) { min-width: 120px; };
+        @include mQ($largeDevice) { min-width: 150px; };
+    }
+}
+
+@mixin flexBasicStyle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    @include flexBasicStyle;
+    flex-direction: column;
+}
+
+.flex-row {
+    @include flexBasicStyle;
+    flex-direction: column !important;
+    @include mQ($mediumDevice) {
+        flex-direction: row !important;
+    };
+}
+
+.flex-row-item {
+    @include flexBasicStyle;
+    flex-direction: column;
+
+    @include mQ($mediumDevice) {
+        flex: 0 0 48% !important;
+    };
+}
+
+.flex-column-item {
+    @include flexBasicStyle;
+    flex-direction: column;
+    flex: 0 0 100%;
+}

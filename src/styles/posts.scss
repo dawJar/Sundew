@@ -18,7 +18,7 @@ div.single-post {
   color: $mainFontColor;
   background-color: lighten($bgColor, 3);
   // background-color: #BFE867;
-  border-radius: 10px;
+  // border-radius: 10px;
   border: 5px solid $mainSupplementaryBgColor;
 
   @include mQ($xSmallDevice) {

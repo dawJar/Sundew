@@ -6,13 +6,36 @@ html(lang="pl")
 
     body
         i#toggle.fa.fa-bars.fa-2x.normal-toggle(aria-hidden="true")
-          
+
         include partials/loading-page.pug
 
         include partials/drawer.pug
+
+        include partials/page-content.pug
+            h2 contact
+            .container-contact
+                form#contact-form.flex-column
+                    .flex-row.flex-column-item
+                        .flex-row-item
+                            .form-align
+                                label(for="name") 
+                                    | name
+                            input(id="name", type="text")
+                        .flex-row-item
+                            .form-align
+                                label(for="email") 
+                                    | e-mail
+                            input(id="email", type="text")
+                    .flex-column-item
+                        .form-align
+                            label(for="msg") 
+                                | message
+                        input(id="msg", type="text")
+                    .flex-column-item
+                        .form-align
+                            input(id="submit", type="submit", value="send message")
+                            input(id="clear", type="submit", value="clear")
         
-        #fake-loading
-            #container-main
-                h1 contact
+        i.fa.fa-chevron-up.fa-2x.hidden-element(aria-hidden="true") 
 
         script(type='text/javascript', src='js/main.min.js')
