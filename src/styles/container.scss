@@ -44,4 +44,12 @@ div#container-responsive {
       margin: 0 0 24px 0;
     };
   }
+
+  // i.fa.fa-chevron-up {
+  //   width: 84%;
+  //   @include mQ($xSmallDevice) { width: 89%; };
+  //   @include mQ($smallDevice) { width: 92%; };
+  //   @include mQ($mediumDevice) { width: 93%; };
+  //   @include mQ($largeDevice) { width: 94%; };
+  // }
 }

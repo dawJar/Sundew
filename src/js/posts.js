@@ -7,6 +7,7 @@ $(document).ready(function () {
         let body = $('body');
         let containerPosts = $('.container-posts');
         let singlePost = $('.single-post');
+        let backToTopButton = $('.fa-chevron-up');
 
         let windowHeight = windowObj.height();
         let whichHiddenPostToShow = 0;
@@ -34,14 +35,42 @@ $(document).ready(function () {
 
         let showNextHiddenPost = () => {
             let whichOneToShow = visiblePosts.length;
-            singlePost.eq(whichOneToShow).fadeIn('slow').removeClass('hidden-post');
+            singlePost.eq(whichOneToShow).fadeIn('slow').removeClass('hidden-element');
             whichHiddenPostToShow++;
+        };
+
+        let handleClickBackToTop = () => {
+            body.animate({ scrollTop: 0 }, 'slow');
+        };
+
+        let mountBackToTopButton = () => {
+            if (backToTopButton.hasClass('hidden-element') &&
+                     whichHiddenPostToShow >= visiblePosts.length) {
+
+                backToTopButton.on('click', handleClickBackToTop);
+                setBackToTopPosition();
+            }
+        };
+
+        let setBackToTopPosition = () => {
+            let topPos = documentObjHeight - 70;
+            setTimeout(() => {
+                backToTopButton.removeClass('hidden-element');
+                backToTopButton.css({
+                    position: 'absolute',
+                    display: 'block',
+                    color: '#cb4b41',
+                    top: topPos,
+                    textAlign: 'center'
+                });
+            }, 400);
         };
 
         let scrollEventHandler = () => {
             setPosts();
             setDimensions();
             checkWatcherPosition();
+            mountBackToTopButton();
         };
 
         return {
