@@ -63,7 +63,7 @@ $(document).ready(function () {
                     top: topPos,
                     textAlign: 'center'
                 });
-            }, 400);
+            }, 300);
         };
 
         let scrollEventHandler = () => {

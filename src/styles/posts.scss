@@ -16,7 +16,8 @@ div.single-post {
   margin: 0 8px 24px 8px;
   padding: 6px 8px;
   color: $mainFontColor;
-  background-color: $bgColor;
+  background-color: lighten($bgColor, 3);
+  // background-color: #BFE867;
   border-radius: 10px;
   border: 5px solid $mainSupplementaryBgColor;
 

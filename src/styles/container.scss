@@ -45,11 +45,11 @@ div#container-responsive {
     };
   }
 
-  // i.fa.fa-chevron-up {
-  //   width: 84%;
-  //   @include mQ($xSmallDevice) { width: 89%; };
-  //   @include mQ($smallDevice) { width: 92%; };
-  //   @include mQ($mediumDevice) { width: 93%; };
-  //   @include mQ($largeDevice) { width: 94%; };
-  // }
+  i.fa.fa-chevron-up {
+    width: 84%;
+    @include mQ($xSmallDevice) { width: 89%; };
+    @include mQ($smallDevice) { width: 92%; };
+    @include mQ($mediumDevice) { width: 93%; };
+    @include mQ($largeDevice) { width: 94%; };
+  }
 }
