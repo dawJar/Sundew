@@ -2,17 +2,16 @@ $(document).ready(function () {
 
     const postPage = (function () {
 
+        let documentObj = $(document);
         let windowObj = $(window);
         let body = $('body');
         let containerPosts = $('.container-posts');
         let singlePost = $('.single-post');
 
         let windowHeight = windowObj.height();
-        let currentHighestPost = 0;
-        let singlePostHeight,
-            gapBetweenPosts,
-            containerPostsTopPos,
-            scrollTopPos,
+        let whichHiddenPostToShow = 0;
+        let scrollBottomPos,
+            documentObjHeight,
             visiblePosts;
 
 
@@ -23,23 +22,12 @@ $(document).ready(function () {
 
         let setDimensions = () => {
             let visiblePostCounter = visiblePosts.length;
-
-            containerPostsTopPos = containerPosts.offset().top;
-            scrollTopPos = windowObj.scrollTop();
-
-            let containerPostsHeight = containerPosts.height();
-            singlePostHeight = singlePost.outerHeight();
-            gapBetweenPosts = (containerPostsHeight - (singlePostHeight * visiblePostCounter)) / visiblePostCounter;
+            scrollBottomPos = windowObj.scrollTop() + windowObj.height()
+            documentObjHeight = documentObj.height();
         };
 
         let checkWatcherPosition = () => {
-            let postWithBottomPadding = singlePostHeight + gapBetweenPosts;
-            let halfOfPostHeight = postWithBottomPadding / 2;
-            let basicHeight = containerPostsTopPos;
-            let highestPostBottomPos = (currentHighestPost === 0) ?
-                    basicHeight : basicHeight + (postWithBottomPadding * currentHighestPost);
-
-            if (scrollTopPos > highestPostBottomPos) {
+            if (scrollBottomPos > documentObjHeight - 30) {
                 showNextHiddenPost();
             }
         };
@@ -47,7 +35,7 @@ $(document).ready(function () {
         let showNextHiddenPost = () => {
             let whichOneToShow = visiblePosts.length;
             singlePost.eq(whichOneToShow).fadeIn('slow').removeClass('hidden-post');
-            currentHighestPost++;
+            whichHiddenPostToShow++;
         };
 
         let scrollEventHandler = () => {
