@@ -5,8 +5,8 @@
 /bower_components
 /src/bower_components
 /src
-.babelrc
-.bowerrc
-bower.json
-package.json
-gulpfile.js
+/.babelrc
+/.bowerrc
+/bower.json
+/package.json
+/gulpfile.js
