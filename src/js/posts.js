@@ -58,16 +58,14 @@ $(document).ready(function () {
 
         let setBackToTopPosition = () => {
             let topPos = documentObjHeight - 70;
-            setTimeout(() => {
-                backToTopButton.removeClass('hidden-element');
-                backToTopButton.css({
-                    position: 'absolute',
-                    display: 'block',
-                    color: '#cb4b41',
-                    top: topPos,
-                    textAlign: 'center'
-                });
-            }, 0);
+            backToTopButton.removeClass('hidden-element');
+            backToTopButton.css({
+                position: 'absolute',
+                display: 'block',
+                color: '#cb4b41',
+                top: topPos,
+                textAlign: 'center'
+            });
         };
 
         let scrollEventHandler = () => {
@@ -75,7 +73,6 @@ $(document).ready(function () {
             setDimensions();
             checkWatcherPosition();
             mountBackToTopButton();
-            console.log('scroll');
         };
 
         return {
