@@ -1,6 +1,7 @@
 /node_modules
 /dist
 /dest
+/partials
 /public
 /bower_components
 /src/bower_components
