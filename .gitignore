@@ -1,7 +1,12 @@
 /node_modules
 /dist
 /dest
-/gh-pages
 /public
 /bower_components
 /src/bower_components
+/src
+.babelrc
+.bowerrc
+bower.json
+package.json
+gulpfile.js

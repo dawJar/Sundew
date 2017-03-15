@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>
+       sundew page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+  </head>
+  <body><i class="fa fa-bars fa-2x normal-toggle" id="toggle" aria-hidden="true"></i>
+    <div id="loading-page"> <i class="loading-circle circle-one"></i><i class="loading-circle circle-two"></i><i class="loading-circle circle-three"></i></div>
+    <div class="drawer">
+      <ul class="drawer-links">
+        <li><a href="/">home</a></li>
+        <li> <a href="/posts.html">posts</a></li>
+        <li> <a href="/about.html">about</a></li>
+        <li> <a href="/contact.html">contact</a></li>
+      </ul>
+      <div class="contact-icons">
+        <ol class="icons">
+          <li class="fb"><a href="/">fb</a></li>
+          <li class="tw"><a href="/">tw</a></li>
+          <li class="gplus"><a href="/">g+</a></li>
+          <li class="gh"><a href="https://github.com/dawJar/sundew-jquery">gh</a></li>
+        </ol>
+      </div>
+    </div>
+    <div id="fake-loading">
+      <div id="container-responsive">
+        <div id="container-content"></div>
+        <h2>
+           contact</h2>
+        <div class="flex-row additional-margin-over-container">
+          <div class="flex-row-item-1-3 contact-field"><span>email: pcoelho@easy.com</span></div>
+          <div class="flex-row-item-1-3 contact-field"><span>phone: (3-345) 777-777</span></div>
+          <div class="flex-row-item-1-3 contact-field"><span>author: Y-go studio </span></div>
+        </div>
+        <h3 class="contact-form-title">send us a message</h3>
+        <div class="container-contact">
+          <form class="flex-column" id="contact-form">
+            <div class="flex-row flex-column-item">
+              <div class="flex-row-item">
+                <div class="form-align">
+                  <label for="name">
+                     name</label>
+                </div>
+                <input id="name" type="text">
+              </div>
+              <div class="flex-row-item">
+                <div class="form-align">
+                  <label for="email">
+                     e-mail</label>
+                </div>
+                <input id="email" type="text">
+              </div>
+            </div>
+            <div class="flex-column-item">
+              <div class="form-align">
+                <label for="msg">
+                   message</label>
+              </div>
+              <input id="msg" type="text">
+            </div>
+            <div class="flex-column-item">
+              <div class="form-align">
+                <input id="submit" type="submit" value="send message">
+                <input id="clear" type="button" value="clear">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><i class="fa fa-chevron-up fa-2x hidden-element" aria-hidden="true"> </i>
+    <script type="text/javascript" src="js/main.min.js"></script>
+  </body>
+</html>

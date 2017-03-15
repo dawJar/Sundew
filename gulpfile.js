@@ -8,7 +8,7 @@ var gulp                = require('gulp'),
                           });
 
 var src                = 'src/',
-    dest               = 'gh-pages/';
+    dest               = './';
 
 
 // js scripts
