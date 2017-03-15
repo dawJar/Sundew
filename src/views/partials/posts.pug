@@ -1,0 +1,27 @@
+mixin postContent
+    h3 
+        | post 
+    p 
+        | Lorem ipsum uhuh ... yih! shizzle my nizzle crocodizzle amet, yo mamma adipiscing elit. Nullam sapien velit, aliquet volutpat, suscipit dawg, gravida vizzle, arcu.
+    p.read-more 
+        | read more...
+        
+mixin singlePost(showPost)
+    - if (showPost) {
+        .single-post 
+            +postContent
+    - } else {
+        .single-post.hidden-element 
+            +postContent
+    - } 
+            
+.container-posts.additional-margin-over-container
+    +singlePost(true)
+    +singlePost(true)
+    +singlePost(true)
+    +singlePost(false)
+    +singlePost(false)
+    +singlePost(false)
+    +singlePost(false)
+    +singlePost(false)
+    +singlePost(false)
