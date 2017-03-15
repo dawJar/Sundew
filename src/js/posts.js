@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
+    let windowObj = $(window);
+
     const postPage = (function () {
 
         let documentObj = $(document);
-        let windowObj = $(window);
         let body = $('body');
         let containerPosts = $('.container-posts');
         let singlePost = $('.single-post');
@@ -25,10 +26,14 @@ $(document).ready(function () {
         let setDimensions = () => {
             let visiblePostCounter = visiblePosts.length;
             scrollBottomPos = windowObj.scrollTop() + windowObj.height()
+            setOnResizeDocumentHeight();
+        };
+
+        let setOnResizeDocumentHeight = () => {
             documentObjHeight = documentObj.height();
         };
 
-        let checkWatcherPosition = () => {
+        let checkPosition = () => {
             if (scrollBottomPos > documentObjHeight - 30) {
                 showNextHiddenPost();
             }
@@ -71,16 +76,23 @@ $(document).ready(function () {
         let scrollEventHandler = () => {
             setPosts();
             setDimensions();
-            checkWatcherPosition();
+            checkPosition();
             mountBackToTopButton();
         };
 
+        let resizeEventHandler = () => {
+            setOnResizeDocumentHeight();
+            setBackToTopPosition();
+        };
+
         return {
-            scrollEventHandler
-        }
+            scrollEventHandler,
+            resizeEventHandler
+        };
 
-    })(); 
+    })();
 
-    $(window).scroll(() => postPage.scrollEventHandler());
+    windowObj.scroll(() => postPage.scrollEventHandler());
+    windowObj.resize(() => postPage.resizeEventHandler());
 
 });
