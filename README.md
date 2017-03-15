@@ -2,7 +2,7 @@
 Simple static gh-page
 # Demo
 https://dawjar.github.io/sundew-jquery/
-##Technologies used
+## Technologies used
 * jQuery
 * Sass
 * Pug template
