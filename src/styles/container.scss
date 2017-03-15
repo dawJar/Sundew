@@ -4,53 +4,46 @@
 
 
 div#container-responsive {
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 5px solid transparent;
-
-  @include mQ($xSmallDevice) {
-    background-color: $mainFontColor;
-    padding: 34px 0;
-    border: 0;
-    width: 73%;
-  };
-  @include mQ($smallDevice) {
-    width: 81%;
-  };
-  @include mQ($mediumDevice) {
-    width: 85%;
-    max-width: 1000px;
-  };
-
-  #container-content {
-    background-color: $mainFontColor;
+    height: 100%;
     width: 100%;
-    border: 0;
-    @include mQ($xSmallDevice) {
-      border-radius: 10px;
-    };
-  }
-
-  h2 {
-    color: $mainSupplementaryBgColor;
-    font-size: 48px;
-    text-decoration: overline;
-    margin: 30px 0 24px 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 5px solid transparent;
 
     @include mQ($xSmallDevice) {
-      margin: 0 0 24px 0;
+        background-color: $mainSupplementaryColor2;
+        padding: 34px 0;
+        border: 0;
+        width: 73%;
     };
-  }
+    @include mQ($smallDevice) { width: 81%; };
+    @include mQ($mediumDevice) {
+        width: 85%;
+        max-width: 1000px;
+    };
+
+    #container-content {
+        background-color: $mainSupplementaryColor2;
+        width: 100%;
+        border: 0;
+        @include mQ($xSmallDevice) { border-radius: 10px; };
+    }
+
+    h2 {
+        color: $mainSupplementaryColor;
+        font-size: 48px;
+        text-decoration: overline;
+        margin: 30px 0 24px 0;
+        @include mQ($xSmallDevice) { margin: 0 0 24px 0; };
+    }
 
 }
 
 i.fa.fa-chevron-up {
-  width: 84%;
-  @include mQ($xSmallDevice) { width: 89%; };
-  @include mQ($smallDevice) { width: 92%; };
-  @include mQ($mediumDevice) { width: 93%; };
-  @include mQ($largeDevice) { width: 94%; };
+    width: 84%;
+    @include mQ($xSmallDevice) { width: 89%; };
+    @include mQ($smallDevice) { width: 92%; };
+    @include mQ($mediumDevice) { width: 93%; };
+    @include mQ($largeDevice) { width: 94%; };
 }

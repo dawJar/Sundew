@@ -1,16 +1,17 @@
 $primaryColor: #222;
-// $bgColor: #899c2c;
-$bgColor: #71BC78;
-$mainSupplementaryBgColor: #cb4b41;
-$loadingPageBgColor: #eee;
-$loaderBorderColor: $mainSupplementaryBgColor;
-// $mainFontColor: #FFFFD2;
-$mainFontColor: #FFFFF0;
+$mainColor: #71BC78;
+$mainSupplementaryColor: #cb4b41;
+$mainSupplementaryColor2: #FFFFF0;
 
 $fbColor: #3B5998;
 $twColor: #00aced;
 $gplusColor: darken(#d34836, 10);
 $ghColor: #333;
+
+$h1FontSize: 56px;
+$h2FontSize: 56px;
+$h3FontSize: 32px;
+$pFontSize: 18px;
 
 // lading animation
 $loadingCircleOne: (0, 360deg);

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     let clearBtn = $('input#clear');
-    let submitBtn = $('input#submit');
+    let submitBtn = $('input#submit'); 
 
     const contactForm = (function () {
 

@@ -79,7 +79,7 @@ $(document).ready(function () {
             scrollEventHandler
         }
 
-    })();
+    })(); 
 
     $(window).scroll(() => postPage.scrollEventHandler());
 

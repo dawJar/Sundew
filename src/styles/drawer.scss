@@ -4,92 +4,77 @@
 
 
 div.drawer {
-  @include slide-drawer-in-animation($animDrawerName);
-  position: fixed;
-  display: none;
-  // color: $mainFontColor;
-  height: 100%;
-  width: 270px;
-  background-color: $mainSupplementaryBgColor;
+    @include slide-drawer-in-animation($animDrawerName);
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 270px;
+    background-color: $mainSupplementaryColor;
 }
 
 div.show-drawer {
-  // color: $mainFontColor;
-  display: block;
-  border-right: 5px solid darken($mainSupplementaryBgColor, 5);
+    display: block;
+    border-right: 3px solid darken($mainSupplementaryColor, 5);
 }
 
 i.fa {
-  position: fixed;
-  cursor: pointer;
-  color: $mainFontColor;
-  top: 30px;
-  left: 30px;
-  z-index: 1;
+    position: fixed;
+    cursor: pointer;
+    color: $mainSupplementaryColor2;
+    top: 30px;
+    left: 30px;
+    z-index: 1;
 }
 
-i.fa-arrow-left {
-  @include slide-drawer-in-animation($animToggleName);
-}
+i.fa-arrow-left { @include slide-drawer-in-animation($animToggleName); }
 
 i.fa-bars.normal-toggle {
-  position: absolute;
-  color: $mainSupplementaryBgColor;
-  @include mQ($xSmallDevice) {
-    position: fixed;
-    // color: $mainSupplementaryBgColor;
-  };
+    position: absolute;
+    color: $mainSupplementaryColor;
+    @include mQ($xSmallDevice) { position: fixed; };
 }
 
 ul.drawer-links {
-  z-index: 1;
-  height: 65%;
-  display: none;
-  margin-top: 92px;
-  list-style-type: none;
+    z-index: 1;
+    height: 65%;
+    display: none;
+    margin-top: 92px;
+    list-style-type: none;
 
-  li {
-    cursor: pointer;
-    margin-bottom: 16px;
-    font-size: 28px;
+    li {
+        cursor: pointer;
+        margin-bottom: 16px;
+        font-size: 28px;
 
-    &:hover {
-      text-decoration: underline;
+        &:hover { text-decoration: underline; }
     }
-  }
 
-  a {
-    text-decoration: none;
-    color: $mainFontColor;
-  }
+    a { @include aStyle; }
 }
 
 div.contact-icons {
-  height: 35%;
-  display: none;
+    height: 35%;
+    display: none;
 
-  ol.icons {
-    box-sizing: border-box;
-    display: inline-flex;
-    list-style-type: none;
-  }
+    ol.icons {
+        box-sizing: border-box;
+        display: inline-flex;
+        list-style-type: none;
+    }
 
-  li {
-    box-sizing: border-box;
-    cursor: pointer;
-    font-size: 24px;
-    border: 2px solid $mainFontColor;
-    margin-right: 6px;
-    padding: 6px 12px;
-  }
+    li {
+        box-sizing: border-box;
+        cursor: pointer;
+        font-size: 24px;
+        border: 2px solid $mainSupplementaryColor2;
+        margin-right: 6px;
+        padding: 6px 12px;
+    }
 
-  li.fb { @include contactIconStyle($fbColor); }
-  li.tw { @include contactIconStyle($twColor); }
-  li.gplus { @include contactIconStyle($gplusColor); }
-  li.gh { @include contactIconStyle($ghColor); }
+    li.fb { @include contactIconStyle($fbColor); }
+    li.tw { @include contactIconStyle($twColor); }
+    li.gplus { @include contactIconStyle($gplusColor); }
+    li.gh { @include contactIconStyle($ghColor); }
 
-  a {
-    text-decoration: none;
-    color: $mainFontColor;
-  }
+    a { @include aStyle; }
 }

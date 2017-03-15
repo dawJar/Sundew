@@ -3,76 +3,50 @@
 
 // loading page
 @mixin loading-logo-anim($circleKeyframes) {
-  animation-name: $circleKeyframes;
-  animation-timing-function: ease-in-out;
-  animation-duration: 2500ms;
+    animation-name: $circleKeyframes;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2500ms;
 }
 
 @keyframes loading-logo-one {
-  $start: nth($loadingCircleOne, 1);
-  $stop: nth($loadingCircleOne, 2);
-  0% {
-    transform: rotateZ($start);
-  }
-  100% {
-    transform: rotateZ($stop);
-  }
+    $start: nth($loadingCircleOne, 1);
+    $stop: nth($loadingCircleOne, 2);
+    0% { transform: rotateZ($start); }
+    100% { transform: rotateZ($stop); }
 }
+
 @keyframes loading-logo-two {
-  $start: nth($loadingCircleTwo, 1);
-  $stop: nth($loadingCircleTwo, 2);
-  0% {
-    transform: rotateZ($start);
-  }
-  100% {
-    transform: rotateZ(-$stop);
-  }
+    $start: nth($loadingCircleTwo, 1);
+    $stop: nth($loadingCircleTwo, 2);
+    0% { transform: rotateZ($start); }
+    100% { transform: rotateZ(-$stop); }
 }
+
 @keyframes loading-logo-three {
-  $start: nth($loadingCircleThree, 1);
-  $stop: nth($loadingCircleThree, 2);
-  0% {
-    transform: rotateZ($start);
-  }
-  100% {
-    transform: rotateZ($stop);
-  }
+    $start: nth($loadingCircleThree, 1);
+    $stop: nth($loadingCircleThree, 2);
+    0% { transform: rotateZ($start); }
+    100% { transform: rotateZ($stop); }
 }
 
 // nav toggle btn
 @mixin slide-drawer-in-animation($animName) {
-  animation-name: $animName;
-  animation-duration: 600ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
+    animation-name: $animName;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 }
 
 @keyframes slide-in-toggle {
-  0% {
-    transform: translateX(-70px);
-  }
-  65% {
-    transform: translateX(220px);
-  }
-  80% {
-    transform: translateX(190px);
-  }
-  100% {
-    transform: translateX(200px);
-  }
+    0% { transform: translateX(-70px); }
+    65% { transform: translateX(220px); }
+    80% { transform: translateX(190px); }
+    100% { transform: translateX(200px); }
 }
 
 @keyframes slide-in {
-  0% {
-    width: 0px;
-  }
-  65% {
-    width: 290px;
-  }
-  80% {
-    width: 260px;
-  }
-  100% {
-    width: 270px;
-  }
+    0% { width: 0px; }
+    65% { width: 290px; }
+    80% { width: 260px; }
+    100% { width: 270px; }
 }

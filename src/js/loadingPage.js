@@ -17,7 +17,7 @@ $(document).ready(function () {
       setTimeout(() => {
         fakeLoading.css('display', () => 'block');
       }, 1500);
-    };
+    }; 
 
     return {
       hideLoadingContent,

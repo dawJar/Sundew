@@ -1,17 +1,15 @@
 @import "variables.scss";
 @import "animation.scss";
+@import "mixins.scss";
 
 
 div#container-main {
-  display: flex;
-  height: 100%;
-  color: $mainFontColor;
-  background-color: $bgColor;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    @include flexBasicStyle;
+    height: 100%;
+    color: $mainSupplementaryColor2;
+    background-color: $mainColor;
+    justify-content: center;
+    flex-direction: column;
 
-  h1 {
-    font-size: 56px;
-  }
+    h1 { font-size: 56px; }
 }

@@ -3,53 +3,53 @@
 
 
 div#loading-page {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-  background-color: $loadingPageBgColor;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: $mainSupplementaryColor2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 i.loading-circle {
-  box-sizing: border-box;
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  background-color: transparent;
-  z-index: 11;
-  border: 3px solid $loaderBorderColor;
-  border-left: none;
-  border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: transparent;
+    z-index: 11;
+    border: 3px solid $mainSupplementaryColor;
+    border-left: none;
+    border-radius: 50%;
 }
 
 i.circle-one {
-  $animationName: 'loading-logo-one';
-  @include loading-logo-anim($animationName);
+    $animationName: 'loading-logo-one';
+    @include loading-logo-anim($animationName);
 }
 
 i.circle-two {
-  $animationName: 'loading-logo-two';
-  @include loading-logo-anim($animationName);
-  width: 60px;
-  height: 60px;
-  border-width: 2px;
-  transform: rotateZ(nth($loadingCircleTwo, 1));
+    $animationName: 'loading-logo-two';
+    @include loading-logo-anim($animationName);
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
+    transform: rotateZ(nth($loadingCircleTwo, 1));
 }
 
 i.circle-three {
-  $animationName: 'loading-logo-three';
-  @include loading-logo-anim($animationName);
-  width: 30px;
-  height: 30px;
-  border-width: 2px;
-  transform: rotateZ(nth($loadingCircleThree, 1));
+    $animationName: 'loading-logo-three';
+    @include loading-logo-anim($animationName);
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+    transform: rotateZ(nth($loadingCircleThree, 1));
 }
 
 div#fake-loading {
-  height: 100%;
-  width: 100%;
-  display: none;
+    height: 100%;
+    width: 100%;
+    display: none;
 }

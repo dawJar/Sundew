@@ -11,44 +11,10 @@ html(lang="pl")
         include partials/drawer.pug
 
         include partials/page-content.pug
-            h2 posts
-            .container-posts.additional-margin-over-container
-                .single-post 
-                    h3 post 1
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post 
-                    h3 post 2
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post 
-                    h3 post 3
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post.hidden-element 
-                    h3 post 4
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post.hidden-element 
-                    h3 post 5
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post.hidden-element 
-                    h3 post 6
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post.hidden-element 
-                    h3 post 7
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post.hidden-element 
-                    h3 post 8
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
-                .single-post.hidden-element 
-                    h3 post 9
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    p.read-more read more...
+            h2 
+                | posts
+            
+            include partials/posts.pug
                     
             i.fa.fa-chevron-up.fa-2x.hidden-element(aria-hidden="true") 
 

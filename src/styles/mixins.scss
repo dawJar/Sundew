@@ -3,9 +3,12 @@
 
 
 @mixin contactIconStyle($hoverColor) {
-  &:hover {
-    background-color: $hoverColor;
-  }
+    &:hover { background-color: $hoverColor; }
+}
+
+@mixin aStyle {
+    text-decoration: none;
+    color: $mainSupplementaryColor2;
 }
 
 @mixin flexBasicStyle {

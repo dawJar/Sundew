@@ -2,23 +2,18 @@
 @import "animation.scss";
 
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-html, body {
-  box-sizing: border-box;
-  height: 100%;
-}
+*, *::before, *::after { box-sizing: inherit; }
 
 * {
   margin: 0 auto;
   padding: 0;
-  // color: $mainFontColor;
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
-body {
-  background-color: $mainFontColor;
+html, body {
+    box-sizing: border-box;
+    height: 100%;
 }
+
+body { background-color: $mainSupplementaryColor2; }
