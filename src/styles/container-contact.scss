@@ -3,6 +3,8 @@
 
 
 div.container-contact {
+    margin-bottom: 90px;
+
     input#name, input#email, input#msg {
         width: 96%;
         min-height: 50px;
@@ -39,15 +41,16 @@ div.container-contact {
     input#submit, input#clear {
         cursor: pointer;
         min-height: 50px;
-        min-width: 180px;
+        width: 50%;
         background-color: lighten($mainSupplementaryBgColor, 4);
         border: none;
         font-size: 18px;
         color: $mainFontColor;
         border: 2px solid darken($mainSupplementaryBgColor, 2);
 
-        @include mQ($mediumDevice) { min-width: 200px; };
-        @include mQ($largeDevice) { min-width: 230px; };
+        @include mQ($xSmallDevice) { width: 180px; };
+        @include mQ($mediumDevice) { width: 240px; };
+        @include mQ($largeDevice) { width: 290px; };
 
         &:hover, &:focus {
             background-color: darken($mainSupplementaryBgColor, 4);
@@ -55,17 +58,36 @@ div.container-contact {
             color: lighten($mainFontColor, 10);
         }
     }
+
     input#clear {
-        min-width: 100px;
-        @include mQ($mediumDevice) { min-width: 120px; };
-        @include mQ($largeDevice) { min-width: 150px; };
+        width: 30%;
+        @include mQ($xSmallDevice) { width: 100px; };
+        @include mQ($mediumDevice) { width: 150px; };
+        @include mQ($largeDevice) { width: 200px; };
     }
+
+
 }
 
-@mixin flexBasicStyle {
-    width: 100%;
-    display: flex;
-    align-items: center;
+h3.contact-form-title {
+    color: $mainSupplementaryBgColor;
+    text-decoration: overline;
+    font-size: 18px;
+    margin: 16px 0;
+}
+
+div.container-contact-field {
+    margin-top: 44px;
+}
+
+div.contact-field {
+
+    height: 60px;
+    font-size: 18px;
+    font-weight: bolder;
+    color: darken($bgColor, 7);
+
+    span { &:hover { cursor: pointer; } }
 }
 
 .flex-column {
@@ -89,7 +111,14 @@ div.container-contact {
         flex: 0 0 48% !important;
     };
 }
+.flex-row-item-1-3 {
+    @include flexBasicStyle;
+    flex-direction: column;
 
+    @include mQ($mediumDevice) {
+        flex: 0 0 33% !important;
+    };
+}
 .flex-column-item {
     @include flexBasicStyle;
     flex-direction: column;

@@ -11,6 +11,7 @@ $(document).ready(function () {
 
         let windowHeight = windowObj.height();
         let whichHiddenPostToShow = 0;
+        let backToTopListenerMounted = false;
         let scrollBottomPos,
             documentObjHeight,
             visiblePosts;
@@ -41,13 +42,16 @@ $(document).ready(function () {
 
         let handleClickBackToTop = () => {
             body.animate({ scrollTop: 0 }, 'slow');
+            backToTopListenerMounted = true;
         };
 
         let mountBackToTopButton = () => {
             if (backToTopButton.hasClass('hidden-element') &&
                      whichHiddenPostToShow >= visiblePosts.length) {
 
-                backToTopButton.on('click', handleClickBackToTop);
+                if (!backToTopListenerMounted) {
+                    backToTopButton.on('click', handleClickBackToTop);
+                }
                 setBackToTopPosition();
             }
         };
@@ -63,7 +67,7 @@ $(document).ready(function () {
                     top: topPos,
                     textAlign: 'center'
                 });
-            }, 300);
+            }, 0);
         };
 
         let scrollEventHandler = () => {
@@ -71,6 +75,7 @@ $(document).ready(function () {
             setDimensions();
             checkWatcherPosition();
             mountBackToTopButton();
+            console.log('scroll');
         };
 
         return {
