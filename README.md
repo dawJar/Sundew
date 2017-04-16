@@ -1,7 +1,7 @@
 ## Sundew jQuery page
 static gh-page blog
 ## Demo
-https://djaracz.github.io/Sundew/
+https://djaracz.github.io/sundew/
 ## Technologies used
 * jQuery
 * Sass
